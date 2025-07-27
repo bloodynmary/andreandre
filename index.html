@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Site Fofo com Música</title>
+  <style>
+    /* Fundo rosa pastel com nuvens */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffd6e7;
+      background-image:
+        url('https://i.imgur.com/NuNuvem1.png'), /* nuvem 1 transparente */
+        url('https://i.imgur.com/NuNuvem2.png'), /* nuvem 2 transparente */
+        url('https://i.imgur.com/NuNuvem3.png'); /* nuvem 3 transparente */
+      background-repeat: no-repeat, no-repeat, no-repeat;
+      background-position: 20% 20%, 70% 40%, 50% 70%;
+      background-size: 200px 150px, 250px 180px, 300px 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    img#central {
+      max-width: 80%;
+      max-height: 60vh;
+      margin-bottom: 20px;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    img#botao {
+      width: 80px;
+      cursor: pointer;
+      user-select: none;
+      transition: transform 0.2s;
+    }
+
+    img#botao:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <img id="central" src="imagem-central.png" alt="Imagem Central" />
+
+  <img id="botao" src="botao.png" alt="Botão tocar música" onclick="tocarMusica()" />
+
+  <audio id="musica" src="Jean Paulo Campos - Peraí (Vídeo Oficial) (mp3cut.net).mp3"></audio>
+
+  <script>
+    function tocarMusica() {
+      const audio = document.getElementById('musica');
+      audio.play();
+    }
+  </script>
+
+</body>
+</html>
